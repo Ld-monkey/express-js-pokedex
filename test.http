@@ -1,0 +1,21 @@
+@baseUrl = http://localhost:3000
+
+### Affiche l'ensemble des pokémons du pokedex
+GET {{baseUrl}}/pokemons
+
+### Affiche un unique pokemon
+GET {{baseUrl}}/pokemon/1
+
+### Affiche tous les dresseurs
+GET {{baseUrl}}/dresseurs
+
+### Affiche un seul dresseur
+GET {{baseUrl}}/dresseur/1
+
+### Créer un dresseur
+POST {{baseUrl}}/dresseur
+content-type: application/json
+
+{
+  "nom":"Timothé"
+}
