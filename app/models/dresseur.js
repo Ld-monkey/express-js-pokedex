@@ -12,7 +12,7 @@ const dresseur = {
     const oneDresseur = await client.query(
       `
     SELECT * FROM dresseurs
-    WHERE id_nom_dresseur = $1;
+    WHERE id = $1;
     `,
       [dresseurId]
     );
@@ -34,7 +34,7 @@ const dresseur = {
       `
     UPDATE dresseurs
     SET nom_dresseur = $1
-    WHERE id_nom_dresseur = $2
+    WHERE id = $2
     RETURNING *;
     `,
       [dresseurName, dresseurId]
@@ -46,7 +46,7 @@ const dresseur = {
     const rmDresseur = await client.query(
       `
     DELETE FROM dresseurs
-    WHERE id_nom_dresseur = $1;
+    WHERE id = $1;
     `,
       [dresseurId]
     );

@@ -30,14 +30,14 @@ INSERT INTO dresseurs (nom_dresseur) VALUES
     ('Aldo'),
     ('Peter');
 
-INSERT INTO capture (id_nom_dresseur, id_nom_pokemon) VALUES 
+INSERT INTO capture (id_dresseur, id_pokemon) VALUES 
     (1, 1),
     (1, 10),
     (1, 4),
     (2, 7),
     (3, 9);
 
-INSERT INTO types (libelle) VALUES
+INSERT INTO "types" (libelle) VALUES
     ('Combat'),
     ('Dragon'),
     ('Eau'),
@@ -54,7 +54,7 @@ INSERT INTO types (libelle) VALUES
     ('Spectre'),
     ('Vol');
 
-INSERT INTO pokemon_type (id_nom_pokemon, id_libelle) VALUES 
+INSERT INTO pokemon_type (id_pokemon, id_libelle) VALUES 
     (1, 9),
     (1, 10),
     (2, 9),
