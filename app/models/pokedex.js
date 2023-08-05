@@ -11,8 +11,8 @@ const pokedex = {
   async getPokemon(pokemonId) {
     const pokemon = await client.query(`
     SELECT * FROM pokemons
-    WHERE id_nom_pokemon = ${pokemonId};
-    `);
+    WHERE id_nom_pokemon = $1;
+    `, [pokemonId]);
     return pokemon;
   },
 };

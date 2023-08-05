@@ -13,9 +13,10 @@ const pokedexController = {
   },
 
   async getPokemonsById(req, res) {
-    const pokemonId = Number(req.params.id);
+    const { id } = req.params;
+
     pokedex
-      .getPokemon(pokemonId)
+      .getPokemon(id)
       .then((data) => {
         res.status(200).send(data.rows);
       })

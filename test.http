@@ -6,6 +6,9 @@ GET {{baseUrl}}/pokemons
 ### Affiche un unique pokemon
 GET {{baseUrl}}/pokemon/1
 
+### Affiche un unique pokemon
+GET {{baseUrl}}/pokemon/nimportequoi
+
 ### Affiche tous les dresseurs
 GET {{baseUrl}}/dresseurs
 
@@ -17,5 +20,14 @@ POST {{baseUrl}}/dresseur
 content-type: application/json
 
 {
-  "nom":"Timothé"
+  "nom":"Timothée"
 }
+
+### Modifie le nom d'un dresseur
+PUT {{baseUrl}}/dresseur/10?name=George
+
+### Modifie ne met pas le nom paramètre pour changer le nom d'un dresseur
+PUT {{baseUrl}}/dresseur/10?test=Stephane
+
+### Supprimer un dresseur
+DELETE {{baseUrl}}/dresseur/2

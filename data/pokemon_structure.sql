@@ -1,4 +1,5 @@
--- Remove tables if exists
+BEGIN;
+
 DROP TABLE IF EXISTS types, capture, pokemon_type;
 DROP TABLE IF EXISTS dresseurs, pokemons, talents;
 
@@ -34,8 +35,8 @@ CREATE TABLE types (
 CREATE TABLE capture (
   id_nom_dresseur integer NOT NULL,
   id_nom_pokemon integer NOT NULL,
-  FOREIGN KEY (id_nom_dresseur) REFERENCES dresseurs(id_nom_dresseur),
-  FOREIGN KEY (id_nom_pokemon) REFERENCES pokemons(id_nom_pokemon)
+  FOREIGN KEY (id_nom_dresseur) REFERENCES dresseurs(id_nom_dresseur) ON DELETE CASCADE,
+  FOREIGN KEY (id_nom_pokemon) REFERENCES pokemons(id_nom_pokemon) ON DELETE CASCADE
 );
 
 CREATE TABLE pokemon_type (
@@ -44,3 +45,5 @@ CREATE TABLE pokemon_type (
   FOREIGN KEY (id_nom_pokemon) REFERENCES pokemons(id_nom_pokemon),
   FOREIGN KEY (id_libelle) REFERENCES types(id_libelle)
 );
+
+COMMIT;
